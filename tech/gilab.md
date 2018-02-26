@@ -18,3 +18,9 @@
     -v /var/run/docker.sock:/var/run/docker.sock   
     -v /srv/gitlab-runner/config:/etc/gitlab-runner   
     gitlab/gitlab-runner:latest
+
+#ci register
+
+   gitlab-ci-multi-runner register
+   
+   
