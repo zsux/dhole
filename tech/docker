@@ -1,5 +1,10 @@
 # ABOUT DOCKER
 
+use docker without sudo
+
+    sudo groupadd docker
+    sudo gpasswd -a $USER docker
+
 停止所有的container，这样才能够删除其中的images：
 
     docker stop $(docker ps -a -q)
