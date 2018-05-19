@@ -1,3 +1,6 @@
+
+  GET /dev-rcm/task/_count
+
 GET /dev-rcm/task/_search
 {
   "query": {
@@ -124,11 +127,20 @@ PUT /dev-rcm/_mapping/task
       "type": "date",
       "format": "yyyy-MM-dd HH:mm:ss"
     },
-    "userFaceLinks": {
+    "avatar": {
         "type":     "keyword"
     },
     "userId": {
       "type": "long"
+    },
+    "units": {
+      "type": "text"
+    },
+    "codes": {
+      "type": "text"
+    },
+    "unitCodes": {
+      "type": "text"
     }
   }
 }
@@ -138,14 +150,15 @@ GET /dev-rcm/task/_search
 {
   "query": {
     "terms":{
-      "projectCode":["YQH"]
+      "projectCode":["XJX","JSQB"]
     }
   },
   "_source": {
     "includes": [
       "taskId",
       "projectCode",
-      "phaseCode"
+      "phaseCode",
+      "avatar"
     ]
   },
   "sort": [
